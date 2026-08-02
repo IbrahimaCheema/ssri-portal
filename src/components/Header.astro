@@ -29,6 +29,7 @@ const navLinks = [
 ];
 
 const currentPath = Astro.url.pathname;
+const R2_DOMAIN = import.meta.env.R2_PUBLIC_DOMAIN || 'https://docs.ssri.pk';
 ---
 
 <header class="header">
@@ -56,7 +57,7 @@ const currentPath = Astro.url.pathname;
   <div class="main-nav-wrapper">
     <div class="container main-nav-container">
       <a href="/" class="brand-logo">
-        <img src="/images/sr-logo.png" alt="Shakarganj Sugar Research Institute" class="logo-img" onerror="this.onerror=null; this.src='/images/sr-logo.png'" />
+        <img src={`${R2_DOMAIN}/images/sr-logo.png`} alt="Shakarganj Sugar Research Institute" class="logo-img" onerror="this.onerror=null; this.src='/images/sr-logo.png'" />
         <div class="brand-text">
           <span class="brand-title">SSRI</span>
           <span class="brand-sub">Shakarganj Sugar Research Institute</span>

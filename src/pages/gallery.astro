@@ -4,21 +4,23 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PageHero from '../components/PageHero.astro';
 
+const R2_DOMAIN = import.meta.env.R2_PUBLIC_DOMAIN || 'https://docs.ssri.pk';
+
 const galleryItems = [
-  { image: '/images/G_1-1024x768.jpg', title: 'SSRI Research Farm & Field Experiments', category: 'Field Research' },
-  { image: '/images/G_2-1024x768.jpg', title: 'Tissue Culture Meristem Growth Room', category: 'Laboratory' },
-  { image: '/images/G_4-1024x768.jpg', title: 'Biological Control Lab Rearing Operations', category: 'Biocontrol' },
-  { image: '/images/G_5-1024x768.jpg', title: 'Soil & Water Testing Analytical Equipment', category: 'Laboratory' },
-  { image: '/images/G_3-1024x768.jpg', title: 'Proprietary Sugarcane Variety Field Trial', category: 'Field Research' },
-  { image: '/images/G_13-768x1024.jpg', title: 'Trichogramma Card Distribution to Farmers', category: 'Extension' },
-  { image: '/images/G_8-1024x768.jpg', title: 'NUVYT Varietal Trial Evaluation Visit', category: 'Field Research' },
-  { image: '/images/G_14-768x1024.jpg', title: 'Chrysoperla carnea Lacewing Rearing Sheet', category: 'Biocontrol' },
-  { image: '/images/G_10-768x1024.jpg', title: 'Sugarcane Pathology Disease Screening', category: 'Laboratory' },
-  { image: '/images/G_9-768x1024.jpg', title: 'Shakarganj Organic Fertilizer Demonstration', category: 'Extension' },
-  { image: '/images/G_11-768x1024.jpg', title: 'Germplasm Collection Exchange Visit', category: 'Field Research' },
-  { image: '/images/G_12-768x1024.jpg', title: 'Scientific Library & Archives Access', category: 'Library' },
-  { image: '/images/G_6-1024x768.jpg', title: 'Agronomy Seed Rate & Spacing Trial', category: 'Field Research' },
-  { image: '/images/G_76-1024x768.jpg', title: 'Annual Sugarcane Research Seminar', category: 'Events' }
+  { image: `${R2_DOMAIN}/images/G_1-1024x768.jpg`, title: 'SSRI Research Farm & Field Experiments', category: 'Field Research' },
+  { image: `${R2_DOMAIN}/images/G_2-1024x768.jpg`, title: 'Tissue Culture Meristem Growth Room', category: 'Laboratory' },
+  { image: `${R2_DOMAIN}/images/G_4-1024x768.jpg`, title: 'Biological Control Lab Rearing Operations', category: 'Biocontrol' },
+  { image: `${R2_DOMAIN}/images/G_5-1024x768.jpg`, title: 'Soil & Water Testing Analytical Equipment', category: 'Laboratory' },
+  { image: `${R2_DOMAIN}/images/G_3-1024x768.jpg`, title: 'Proprietary Sugarcane Variety Field Trial', category: 'Field Research' },
+  { image: `${R2_DOMAIN}/images/G_13-768x1024.jpg`, title: 'Trichogramma Card Distribution to Farmers', category: 'Extension' },
+  { image: `${R2_DOMAIN}/images/G_8-1024x768.jpg`, title: 'NUVYT Varietal Trial Evaluation Visit', category: 'Field Research' },
+  { image: `${R2_DOMAIN}/images/G_14-768x1024.jpg`, title: 'Chrysoperla carnea Lacewing Rearing Sheet', category: 'Biocontrol' },
+  { image: `${R2_DOMAIN}/images/G_10-768x1024.jpg`, title: 'Sugarcane Pathology Disease Screening', category: 'Laboratory' },
+  { image: `${R2_DOMAIN}/images/G_9-768x1024.jpg`, title: 'Shakarganj Organic Fertilizer Demonstration', category: 'Extension' },
+  { image: `${R2_DOMAIN}/images/G_11-768x1024.jpg`, title: 'Germplasm Collection Exchange Visit', category: 'Field Research' },
+  { image: `${R2_DOMAIN}/images/G_12-768x1024.jpg`, title: 'Scientific Library & Archives Access', category: 'Library' },
+  { image: `${R2_DOMAIN}/images/G_6-1024x768.jpg`, title: 'Agronomy Seed Rate & Spacing Trial', category: 'Field Research' },
+  { image: `${R2_DOMAIN}/images/G_76-1024x768.jpg`, title: 'Annual Sugarcane Research Seminar', category: 'Events' }
 ];
 ---
 

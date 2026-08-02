@@ -4,17 +4,19 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PageHero from '../components/PageHero.astro';
 
+const R2_DOMAIN = import.meta.env.R2_PUBLIC_DOMAIN || 'https://docs.ssri.pk';
+
 const varieties = [
-  { name: 'S-2013 SLSG-1283', code: 'SLSG-1283', image: '/images/VAR-SLSG-1283-1024x1024.jpg', status: 'FSCR Registered & NUVYT Trialed' },
-  { name: 'CP-1101', code: 'CP-1101', image: '/images/VAR-CP-1101-1024x1024.jpg', status: 'FSCR Registered Commercial Clone' },
-  { name: 'SLSG-483', code: 'SLSG-483', image: '/images/VAR-SLSG-483-1024x1024.jpg', status: 'FSCR Registered High Tillering' },
-  { name: 'SLSG-109', code: 'SLSG-109', image: '/images/VAR-SLSG-109-1024x1024.jpg', status: 'FSCR Registered Medium Late' },
-  { name: 'CPTJ-349', code: 'CPTJ-349', image: '/images/VAR-CPTJ-349-1024x1024.jpg', status: 'FSCR Registered High Recovery' },
-  { name: 'SLSG-1591', code: 'SLSG-1591', image: '/images/VAR-SLSG-1591-1024x1024.jpg', status: 'FSCR Registered Advanced Breeding' },
-  { name: 'S-2010 CPSG-2525', code: 'CPSG-2525', image: '/images/VAR-CPSG-2525-1024x1024.jpg', status: 'FSCR Registered & NUVYT Trialed' },
-  { name: 'CPSG-29', code: 'CPSG-29', image: '/images/VAR-CPSG-29-1024x1024.jpg', status: 'FSCR Registered Germplasm Line' },
-  { name: 'CPSG-153', code: 'CPSG-153', image: '/images/VAR-CPSG-153-1024x1024.jpg', status: 'FSCR Registered Early Variety' },
-  { name: 'SLSG-128', code: 'SLSG-128', image: '/images/VAR-SLSG-128-1024x1024.jpg', status: 'FSCR Registered Rapid Multiplication' }
+  { name: 'S-2013 SLSG-1283', code: 'SLSG-1283', image: `${R2_DOMAIN}/images/VAR-SLSG-1283-1024x1024.jpg`, status: 'FSCR Registered & NUVYT Trialed' },
+  { name: 'CP-1101', code: 'CP-1101', image: `${R2_DOMAIN}/images/VAR-CP-1101-1024x1024.jpg`, status: 'FSCR Registered Commercial Clone' },
+  { name: 'SLSG-483', code: 'SLSG-483', image: `${R2_DOMAIN}/images/VAR-SLSG-483-1024x1024.jpg`, status: 'FSCR Registered High Tillering' },
+  { name: 'SLSG-109', code: 'SLSG-109', image: `${R2_DOMAIN}/images/VAR-SLSG-109-1024x1024.jpg`, status: 'FSCR Registered Medium Late' },
+  { name: 'CPTJ-349', code: 'CPTJ-349', image: `${R2_DOMAIN}/images/VAR-CPTJ-349-1024x1024.jpg`, status: 'FSCR Registered High Recovery' },
+  { name: 'SLSG-1591', code: 'SLSG-1591', image: `${R2_DOMAIN}/images/VAR-SLSG-1591-1024x1024.jpg`, status: 'FSCR Registered Advanced Breeding' },
+  { name: 'S-2010 CPSG-2525', code: 'CPSG-2525', image: `${R2_DOMAIN}/images/VAR-CPSG-2525-1024x1024.jpg`, status: 'FSCR Registered & NUVYT Trialed' },
+  { name: 'CPSG-29', code: 'CPSG-29', image: `${R2_DOMAIN}/images/VAR-CPSG-29-1024x1024.jpg`, status: 'FSCR Registered Germplasm Line' },
+  { name: 'CPSG-153', code: 'CPSG-153', image: `${R2_DOMAIN}/images/VAR-CPSG-153-1024x1024.jpg`, status: 'FSCR Registered Early Variety' },
+  { name: 'SLSG-128', code: 'SLSG-128', image: `${R2_DOMAIN}/images/VAR-SLSG-128-1024x1024.jpg`, status: 'FSCR Registered Rapid Multiplication' }
 ];
 ---
 

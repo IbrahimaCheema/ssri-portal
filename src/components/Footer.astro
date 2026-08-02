@@ -1,10 +1,11 @@
 ---
+const R2_DOMAIN = import.meta.env.R2_PUBLIC_DOMAIN || 'https://docs.ssri.pk';
 ---
 <footer class="footer">
   <div class="container footer-grid">
     <div class="footer-col brand-col">
       <div class="footer-logo">
-        <img src="/images/sr-logo.png" alt="SSRI Logo" class="footer-logo-img" onerror="this.onerror=null; this.src='/images/sr-logo.png'" />
+        <img src={`${R2_DOMAIN}/images/sr-logo.png`} alt="SSRI Logo" class="footer-logo-img" onerror="this.onerror=null; this.src='/images/sr-logo.png'" />
         <h3>Shakarganj Sugar Research Institute</h3>
       </div>
       <p class="brand-desc">

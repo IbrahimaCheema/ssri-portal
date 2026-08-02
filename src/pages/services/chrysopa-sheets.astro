@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import PageHero from '../../components/PageHero.astro';
+
+const R2_DOMAIN = import.meta.env.R2_PUBLIC_DOMAIN || 'https://docs.ssri.pk';
 ---
 
 <Layout title="Chrysoperla carnea Laboratory - SSRI">
@@ -27,7 +29,7 @@ import PageHero from '../../components/PageHero.astro';
           </p>
 
           <div class="media-box">
-            <img src="/images/crysopa-card-1024x1024.jpg" alt="Chrysoperla carnea rearing cards" onerror="this.onerror=null; this.src='/images/crysopa-card-1024x1024.jpg'" />
+            <img src={`${R2_DOMAIN}/images/crysopa-card-1024x1024.jpg`} alt="Chrysoperla carnea rearing cards" onerror="this.onerror=null; this.src='/images/crysopa-card-1024x1024.jpg'" />
             <span class="caption">Chrysoperla carnea rearing cards ready for field release</span>
           </div>
         </div>

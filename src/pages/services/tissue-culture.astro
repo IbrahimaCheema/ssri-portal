@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import PageHero from '../../components/PageHero.astro';
+
+const R2_DOMAIN = import.meta.env.R2_PUBLIC_DOMAIN || 'https://docs.ssri.pk';
 ---
 
 <Layout title="Tissue Culture Laboratory - SSRI">
@@ -28,11 +30,11 @@ import PageHero from '../../components/PageHero.astro';
 
           <div class="gallery-inline">
             <div class="img-card">
-              <img src="/images/tissue-culture.png" alt="Sugarcane Tissue Culture Plantlets" onerror="this.onerror=null; this.src='/images/tissue-culture.png'" />
+              <img src={`${R2_DOMAIN}/images/tissue-culture.png`} alt="Sugarcane Tissue Culture Plantlets" onerror="this.onerror=null; this.src='/images/tissue-culture.png'" />
               <span>Aseptic Meristem Plantlet Culture</span>
             </div>
             <div class="img-card">
-              <img src="/images/T_1-1024x1024.jpg" alt="Tissue Culture Growth Room" onerror="this.onerror=null; this.src='/images/T_1-1024x1024.jpg'" />
+              <img src={`${R2_DOMAIN}/images/T_1-1024x1024.jpg`} alt="Tissue Culture Growth Room" onerror="this.onerror=null; this.src='/images/T_1-1024x1024.jpg'" />
               <span>Controlled Environment Growth Room</span>
             </div>
           </div>
