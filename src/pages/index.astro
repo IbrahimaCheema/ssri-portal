@@ -1,0 +1,654 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const metrics = [
+  { value: '1983', label: 'Established Year', sub: 'Pioneer Private Research Institute' },
+  { value: '08+', label: 'FSCR Registered Varieties', sub: 'High Yield & High Sugar Recovery' },
+  { value: '6,000+', label: 'Farmers Served', sub: 'Free Advisory & Bio-Control Cards' },
+  { value: '1,000+', label: 'Published Research Papers', sub: 'Pakistan Sugar Journal Archives' }
+];
+
+const featuredVarieties = [
+  { name: 'S-2013 SLSG-1283', code: 'SLSG-1283', image: '/images/VAR-SLSG-1283-1024x1024.jpg', desc: 'High cane yield with superior sugar recovery tested under NUVYT trials.' },
+  { name: 'CP-1101', code: 'CP-1101', image: '/images/VAR-CP-1101-1024x1024.jpg', desc: 'Resistant to major cane diseases with early maturity and high tillering capacity.' },
+  { name: 'SLSG-483', code: 'SLSG-483', image: '/images/VAR-SLSG-483-1024x1024.jpg', desc: 'Proven adaptability to soil variations and optimized response to organic fertigation.' },
+  { name: 'S-2010 CPSG-2525', code: 'CPSG-2525', image: '/images/VAR-CPSG-2525-1024x1024.jpg', desc: 'Commercial favorite variety registered with FSCR Islamabad.' }
+];
+
+const servicesList = [
+  {
+    title: 'Soil & Water Advisory Service',
+    desc: 'Established in 1990. Provides free soil and water testing to over 6,000 growers for balanced fertilizer application and optimal yield.',
+    icon: '🧪',
+    href: '/services/soil-and-water'
+  },
+  {
+    title: 'Biological Control Laboratories',
+    desc: 'Established in 1995. Environmentally friendly pest control using Trichogramma chilonis egg parasites and Chrysoperla carnea predators.',
+    icon: '🪲',
+    href: '/services/biological-control'
+  },
+  {
+    title: 'Tissue Culture Laboratory',
+    desc: 'Rapid micropropagation of disease-free, high-purity cane seed (Meristem culture) and micropropagation of ornamental plants and Stevia.',
+    icon: '🧫',
+    href: '/services/tissue-culture'
+  },
+  {
+    title: 'Shakarganj Organic Fertilizer (SOF)',
+    desc: '100% organic slow-release compost designed to restore soil organic matter and increase per-acre crop production by 15-20%.',
+    icon: '🌱',
+    href: '/services/other-services'
+  }
+];
+---
+
+<Layout title="Shakarganj Sugar Research Institute (SSRI) - Pioneer Sugarcane Research">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-backdrop"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-badge">Established July 13, 1983</span>
+          <h1 class="hero-title">Shakarganj Sugar Research Institute</h1>
+          <p class="hero-subtitle">
+            Pioneering private sector sugarcane agronomy, proprietary high-yield variety breeding, biological pest management, and soil advisory services for Pakistan's agricultural future.
+          </p>
+          <div class="hero-actions">
+            <a href="/achievements" class="btn btn-gold">Explore Registered Varieties</a>
+            <a href="/services" class="btn btn-outline">Our Research Services</a>
+          </div>
+        </div>
+        <div class="hero-banner-image">
+          <img src="/images/Banner_00.png" alt="SSRI Campus & Research Farm" onerror="this.onerror=null; this.src='/images/Banner_00.png'" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics Counter Section -->
+    <section class="metrics-section">
+      <div class="container metrics-grid">
+        {metrics.map(m => (
+          <div class="metric-card">
+            <div class="metric-value">{m.value}</div>
+            <div class="metric-label">{m.label}</div>
+            <div class="metric-sub">{m.sub}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Executive About Section -->
+    <section class="about-overview-section">
+      <div class="container grid-2-col">
+        <div class="about-text">
+          <span class="section-tag">About SSRI</span>
+          <h2>Advancing Sugarcane Yields & Sustainability</h2>
+          <p>
+            Shakarganj funds advanced research in sugarcane technology through the Shakarganj Sugar Research Institute (SSRI). This institute is the <strong>first of its kind private sector initiative in Pakistan</strong>, established on July 13, 1983.
+          </p>
+          <p>
+            The main objective of SSRI is to develop new cane varieties capable of producing sugar and other products of economic importance at lower costs than traditional commercial varieties. Development of new varieties with best management practices has increased crop productivity by <strong>over 10%</strong> for Shakarganj cane growers.
+          </p>
+          <div class="about-features">
+            <div class="feat-item">
+              <span class="feat-icon">✓</span>
+              <span>Proprietary breeding increasing farmer yields & sugar recovery</span>
+            </div>
+            <div class="feat-item">
+              <span class="feat-icon">✓</span>
+              <span>Chemical-free biocontrol pest systems open to all stakeholders</span>
+            </div>
+            <div class="feat-item">
+              <span class="feat-icon">✓</span>
+              <span>Free soil & water testing services for 6,000+ regional growers</span>
+            </div>
+          </div>
+          <a href="/about" class="link-btn">Read Full Institute Profile →</a>
+        </div>
+
+        <div class="about-card-box">
+          <div class="highlight-box">
+            <h3>National Service Mission</h3>
+            <p>
+              "All research results, new cane varieties, and bio-control benefits developed at SSRI are open and available to agricultural stakeholders across Pakistan without cost as a national service."
+            </p>
+            <div class="box-footer">
+              <a href="/bog" class="btn btn-sm btn-light">Meet Board of Governors</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registered Varieties Showcase -->
+    <section class="varieties-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Varietal Registration</span>
+          <h2>FSCR Registered Sugarcane Varieties</h2>
+          <p>Eight (08) new cane varieties registered with Federal Seed Certification and Registration Department (FSCR), Islamabad.</p>
+        </div>
+
+        <div class="varieties-grid">
+          {featuredVarieties.map(v => (
+            <div class="variety-card">
+              <div class="var-img-wrap">
+                <img src={v.image} alt={v.name} onerror="this.onerror=null; this.src='/images/VAR-SLSG-1283-1024x1024.jpg'" />
+                <span class="var-badge">{v.code}</span>
+              </div>
+              <div class="var-body">
+                <h3>{v.name}</h3>
+                <p>{v.desc}</p>
+                <a href="/achievements" class="var-link">View Variety Details →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="text-center margin-top-40">
+          <a href="/achievements" class="btn btn-primary">View All 8 Registered Varieties</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Suite Section -->
+    <section class="services-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Research & Extension</span>
+          <h2>Our Core Scientific Services</h2>
+          <p>State-of-the-art laboratories and field advisory services serving farmers and the sugar industry.</p>
+        </div>
+
+        <div class="services-grid">
+          {servicesList.map(s => (
+            <div class="service-card">
+              <div class="service-icon">{s.icon}</div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+              <a href={s.href} class="service-btn">Explore Service →</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pakistan Sugar Journal Feature -->
+    <section class="psj-feature-section">
+      <div class="container psj-container">
+        <div class="psj-text">
+          <span class="psj-badge">CABI UK Cited Journal</span>
+          <h2>Pakistan Sugar Journal (PSJ)</h2>
+          <p>
+            Published quarterly since 1985. Over 1,000 peer-reviewed research papers covering agronomy, pathology, entomology, cane breeding, milling, and sugar processing.
+          </p>
+          <a href="/psj" class="btn btn-primary">Browse Journal Archives</a>
+        </div>
+        <div class="psj-stat">
+          <div class="stat-number">1,000+</div>
+          <div class="stat-text">Peer-Reviewed Papers Published Since 1985</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(135deg, #03140a 0%, #004d1a 60%, #002b00 100%);
+    color: #ffffff;
+    padding: 40px 0 35px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+  .hero-badge {
+    background: rgba(134, 239, 172, 0.2);
+    color: #86efac;
+    border: 1px solid rgba(134, 239, 172, 0.4);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    color: #ffffff;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    color: #cbd5e1;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .hero-banner-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+  .btn-gold {
+    background: #d4af37;
+    color: #0b1d12;
+  }
+  .btn-gold:hover {
+    background: #e5be3e;
+    transform: translateY(-2px);
+  }
+  .btn-primary {
+    background: var(--primary-color);
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .btn-outline-dark {
+    border: 2px solid var(--primary-dark);
+    color: var(--primary-dark);
+  }
+  .btn-outline-dark:hover {
+    background: var(--primary-dark);
+    color: #ffffff;
+  }
+  .btn-sm {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+  .btn-light {
+    background: #ffffff;
+    color: #004d1a;
+  }
+
+  /* Metrics Section */
+  .metrics-section {
+    background: #06170e;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .metric-card {
+    text-align: center;
+    padding: 8px 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .metric-card:last-child {
+    border-right: none;
+  }
+  .metric-value {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    font-weight: 800;
+    color: #86efac;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .metric-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2px;
+  }
+  .metric-sub {
+    font-size: 11.5px;
+    color: #94a3b8;
+  }
+
+  /* About Overview */
+  .about-overview-section {
+    padding: 35px 0 40px;
+    background: #ffffff;
+  }
+  .grid-2-col {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 36px;
+    align-items: center;
+  }
+  .section-tag {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .about-text h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+  }
+  .about-text p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .about-features {
+    margin: 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .feat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+  .feat-icon {
+    background: #dcfce7;
+    color: var(--primary-color);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .link-btn {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .about-card-box {
+    background: linear-gradient(135deg, #004d1a 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 77, 26, 0.15);
+  }
+  .highlight-box h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #86efac;
+  }
+  .highlight-box p {
+    font-size: 14px;
+    line-height: 1.55;
+    font-style: italic;
+    color: #e2e8f0;
+    margin-bottom: 16px;
+  }
+
+  /* Varieties Section */
+  .varieties-section {
+    padding: 40px 0;
+    background: #f8fafc;
+  }
+  .section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .section-header p {
+    font-size: 14.5px;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto 24px;
+  }
+  .varieties-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .variety-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .variety-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  }
+  .var-img-wrap {
+    position: relative;
+    height: 160px;
+  }
+  .var-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .var-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 10px;
+  }
+  .var-body {
+    padding: 14px;
+  }
+  .var-body h3 {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .var-body p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .var-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  .margin-top-40 {
+    margin-top: 24px;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 40px 0;
+    background: #ffffff;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .service-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px 18px;
+    transition: all 0.2s ease;
+  }
+  .service-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 102, 34, 0.08);
+  }
+  .service-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+  .service-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .service-btn {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  /* PSJ Feature Section */
+  .psj-feature-section {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 35px 0;
+    border-top: 1px solid #e2e8f0;
+  }
+  .psj-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+  .psj-badge {
+    background: #fef9c3;
+    color: #854d0e;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .psj-text h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #0f172a;
+  }
+  .psj-text p {
+    font-size: 15px;
+    color: #475569;
+    max-width: 600px;
+    margin-bottom: 16px;
+  }
+  .psj-stat {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 20px 28px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 220px;
+  }
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--primary-color);
+  }
+  .stat-text {
+    font-size: 12px;
+    color: #475569;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  /* Contact CTA Section */
+  .cta-contact-section {
+    padding: 40px 0;
+    background: #f1f5f9;
+  }
+  .cta-contact-section h2 {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+  .cta-contact-section p {
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 20px;
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  /* Responsive Media Queries */
+  @media (max-width: 992px) {
+    .hero-container, .grid-2-col {
+      grid-template-columns: 1fr;
+    }
+    .metrics-grid, .varieties-grid, .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .psj-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (max-width: 600px) {
+    .metrics-grid, .varieties-grid, .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-title {
+      font-size: 28px;
+    }
+    .metric-card {
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+</style>

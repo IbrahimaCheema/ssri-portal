@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+
+const galleryItems = [
+  { image: '/images/G_1-1024x768.jpg', title: 'SSRI Research Farm & Field Experiments', category: 'Field Research' },
+  { image: '/images/G_2-1024x768.jpg', title: 'Tissue Culture Meristem Growth Room', category: 'Laboratory' },
+  { image: '/images/G_4-1024x768.jpg', title: 'Biological Control Lab Rearing Operations', category: 'Biocontrol' },
+  { image: '/images/G_5-1024x768.jpg', title: 'Soil & Water Testing Analytical Equipment', category: 'Laboratory' },
+  { image: '/images/G_3-1024x768.jpg', title: 'Proprietary Sugarcane Variety Field Trial', category: 'Field Research' },
+  { image: '/images/G_13-768x1024.jpg', title: 'Trichogramma Card Distribution to Farmers', category: 'Extension' },
+  { image: '/images/G_8-1024x768.jpg', title: 'NUVYT Varietal Trial Evaluation Visit', category: 'Field Research' },
+  { image: '/images/G_14-768x1024.jpg', title: 'Chrysoperla carnea Lacewing Rearing Sheet', category: 'Biocontrol' },
+  { image: '/images/G_10-768x1024.jpg', title: 'Sugarcane Pathology Disease Screening', category: 'Laboratory' },
+  { image: '/images/G_9-768x1024.jpg', title: 'Shakarganj Organic Fertilizer Demonstration', category: 'Extension' },
+  { image: '/images/G_11-768x1024.jpg', title: 'Germplasm Collection Exchange Visit', category: 'Field Research' },
+  { image: '/images/G_12-768x1024.jpg', title: 'Scientific Library & Archives Access', category: 'Library' },
+  { image: '/images/G_6-1024x768.jpg', title: 'Agronomy Seed Rate & Spacing Trial', category: 'Field Research' },
+  { image: '/images/G_76-1024x768.jpg', title: 'Annual Sugarcane Research Seminar', category: 'Events' }
+];
+---
+
+<Layout title="Research Gallery - SSRI">
+  <Header />
+  <PageHero 
+    title="SSRI Research Gallery" 
+    subtitle="Visual tour of our laboratories, tissue culture growth rooms, biological control units, and field research trials."
+    category="Gallery"
+  />
+
+  <main class="gallery-page">
+    <div class="container">
+      <div class="gallery-grid">
+        {galleryItems.map((item, idx) => (
+          <div class="gallery-card" data-idx={idx}>
+            <div class="img-wrap">
+              <img src={item.image} alt={item.title} onerror="this.onerror=null; this.src='/images/G_1-1024x768.jpg'" />
+              <span class="cat-tag">{item.category}</span>
+            </div>
+            <div class="card-caption">
+              <h3>{item.title}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .gallery-page {
+    padding: 60px 0;
+    background: #f8fafc;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .gallery-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  }
+  .img-wrap {
+    position: relative;
+    height: 240px;
+  }
+  .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cat-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 77, 26, 0.85);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+  }
+  .card-caption {
+    padding: 16px 20px;
+  }
+  .card-caption h3 {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    color: #0f172a;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 992px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+</style>

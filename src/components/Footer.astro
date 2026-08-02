@@ -1,0 +1,196 @@
+---
+---
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col brand-col">
+      <div class="footer-logo">
+        <img src="/images/sr-logo.png" alt="SSRI Logo" class="footer-logo-img" onerror="this.onerror=null; this.src='/images/sr-logo.png'" />
+        <h3>Shakarganj Sugar Research Institute</h3>
+      </div>
+      <p class="brand-desc">
+        Established on July 13, 1983 as Pakistan's pioneer private sector sugarcane research institute. Dedicated to breeding high-sugar varieties, eco-friendly biocontrol pest management, and grower advisory services.
+      </p>
+      <div class="parent-badge">
+        <span>Part of <a href="https://shakarganj.pk" target="_blank" rel="noopener noreferrer">Shakarganj Limited</a></span>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="col-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/about">About SSRI</a></li>
+        <li><a href="/bog">Board of Governors</a></li>
+        <li><a href="/achievements">Registered Varieties</a></li>
+        <li><a href="/psj">Pakistan Sugar Journal</a></li>
+        <li><a href="/gallery">Research Gallery</a></li>
+        <li><a href="/contact">Contact & Location</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="col-title">Research & Services</h4>
+      <ul class="footer-links">
+        <li><a href="/services/soil-and-water">Soil & Water Advisory</a></li>
+        <li><a href="/services/biological-control">Bio-Control Laboratories</a></li>
+        <li><a href="/services/tricho-card">Trichogramma Rearing Lab</a></li>
+        <li><a href="/services/chrysopa-sheets">Chrysopa Lacewing Lab</a></li>
+        <li><a href="/services/tissue-culture">Tissue Culture Laboratory</a></li>
+        <li><a href="/services/other-services">Shakarganj Organic Fertilizer</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col contact-col">
+      <h4 class="col-title">Contact Information</h4>
+      <div class="contact-item">
+        <strong>Controller General:</strong>
+        <span>Dr. Shahid Hussain</span>
+      </div>
+      <div class="contact-item">
+        <strong>Institute Address:</strong>
+        <span>3 KM Toba Tek Singh Road, Jhang, Punjab, Pakistan</span>
+      </div>
+      <div class="contact-item">
+        <strong>Email:</strong>
+        <a href="mailto:info@ssri.pk">info@ssri.pk</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="container bottom-content">
+      <p>© {new Date().getFullYear()} Shakarganj Sugar Research Institute (SSRI). All rights reserved.</p>
+      <p class="powered-by">Powered by <a href="https://shakarganj.pk" target="_blank" rel="noopener noreferrer">Shakarganj Limited</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #06150c;
+    color: #94a3b8;
+    padding-top: 60px;
+    border-top: 4px solid var(--primary-color);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding-bottom: 50px;
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .footer-logo-img {
+    height: 46px;
+    background: #ffffff;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+  .footer-logo h3 {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .brand-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #cbd5e1;
+  }
+  .parent-badge span {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #e2e8f0;
+  }
+  .parent-badge a {
+    color: #facc15;
+    font-weight: 600;
+  }
+
+  .col-title {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  .col-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-light);
+  }
+
+  .footer-links {
+    list-style: none;
+  }
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  .footer-links a {
+    font-size: 14px;
+    color: #cbd5e1;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover {
+    color: #86efac;
+  }
+
+  .contact-col .contact-item {
+    font-size: 14px;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .contact-col strong {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+  }
+  .contact-col a {
+    color: #86efac;
+  }
+
+  .bottom-bar {
+    background: #020904;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 13.5px;
+  }
+  .bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .powered-by a {
+    color: #facc15;
+    font-weight: 600;
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .bottom-content {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  }
+</style>

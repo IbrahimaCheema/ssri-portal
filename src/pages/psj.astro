@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+
+const archives = [
+  { vol: 'Vol 38, No 1', year: '2023', title: 'Quarterly Issue - Sugarcane Agronomy & Milling Technology', papers: 14 },
+  { vol: 'Vol 37, No 4', year: '2022', title: 'Quarterly Issue - Biocontrol Systems & Varietal Yields', papers: 12 },
+  { vol: 'Vol 37, No 3', year: '2022', title: 'Quarterly Issue - Soil Fertigation & Tissue Culture Clones', papers: 15 },
+  { vol: 'Vol 37, No 2', year: '2022', title: 'Quarterly Issue - Pathology Disease Screening & Red Rot', papers: 11 },
+  { vol: 'Vol 37, No 1', year: '2022', title: 'Quarterly Issue - NUVYT Varietal Trial Milestone Data', papers: 13 }
+];
+---
+
+<Layout title="Pakistan Sugar Journal (PSJ) - SSRI">
+  <Header />
+  <PageHero 
+    title="Pakistan Sugar Journal (PSJ)" 
+    subtitle="Quarterly peer-reviewed scientific journal indexed by CABI UK, publishing sugarcane research since 1985."
+    category="Publications"
+  />
+
+  <main class="psj-page">
+    <div class="container">
+      <section class="journal-overview-card">
+        <div class="journal-header">
+          <span class="cabi-badge">CABI UK Cited Open-Access Journal</span>
+          <h2>Scientific Publication Portal</h2>
+        </div>
+        <p class="lead-text">
+          Publication of the <strong>Pakistan Sugar Journal (PSJ)</strong> was started in <strong>1985</strong> on a quarterly basis. To date, a total of <strong>over 1,000 research papers</strong> have been published covering multifarious aspects of sugarcane agriculture and industrial sugar production.
+        </p>
+
+        <div class="journal-meta-grid">
+          <div class="meta-item">
+            <span class="meta-title">Scope & Topics</span>
+            <span class="meta-val">Agronomy, Pathology, Entomology, Plant Breeding, Sugar Processing, Milling & Environmental Impact</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-title">Editorial Board</span>
+            <span class="meta-val">International Panel of Peer Referees & Senior Agricultural Scientists</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-title">Indexing & Citation</span>
+            <span class="meta-val">CABI UK (Commonwealth Agricultural Bureaux International)</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="archives-section">
+        <div class="section-title">
+          <h2>Journal Archives</h2>
+          <p>Access quarterly volume issues and peer-reviewed research papers.</p>
+        </div>
+
+        <div class="archives-list">
+          {archives.map(a => (
+            <div class="archive-card">
+              <div class="archive-year">{a.year}</div>
+              <div class="archive-info">
+                <h3>{a.vol} ({a.year})</h3>
+                <p>{a.title}</p>
+                <span class="paper-count">{a.papers} Research Articles</span>
+              </div>
+              <div class="archive-action">
+                <a href="#request" class="btn-archive">Request Volume Access ↗</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .psj-page {
+    padding: 60px 0;
+    background: #f8fafc;
+  }
+  .journal-overview-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 50px;
+  }
+  .cabi-badge {
+    background: #fef9c3;
+    color: #854d0e;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .journal-header h2 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    color: #0f172a;
+    margin-bottom: 14px;
+  }
+  .lead-text {
+    font-size: 17.5px;
+    color: #1e293b;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .journal-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: #f0fdf4;
+    padding: 24px;
+    border-radius: 10px;
+    border: 1px solid #bbf7d0;
+  }
+  .meta-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .meta-val {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+  }
+  .section-title h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .section-title p {
+    font-size: 15.5px;
+    color: #64748b;
+  }
+
+  .archives-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .archive-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .archive-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    border-color: var(--primary-color);
+  }
+  .archive-year {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-color);
+    background: #f0fdf4;
+    padding: 12px 20px;
+    border-radius: 8px;
+    min-width: 90px;
+    text-align: center;
+  }
+  .archive-info {
+    flex: 1;
+  }
+  .archive-info h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .archive-info p {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 6px;
+  }
+  .paper-count {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  .btn-archive {
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn-archive:hover {
+    background: var(--primary-dark);
+  }
+
+  @media (max-width: 992px) {
+    .journal-meta-grid { grid-template-columns: 1fr; }
+    .archive-card { flex-direction: column; align-items: flex-start; gap: 14px; }
+  }
+</style>

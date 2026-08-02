@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+
+const boardMembers = [
+  {
+    name: 'Mian Mustapha Altaf Saleem',
+    role: 'Chairman',
+    designation: 'Vice President (Operations)',
+    bio: 'Leads the operational strategy and research direction of Shakarganj Sugar Research Institute.',
+    initials: 'MS'
+  },
+  {
+    name: 'Muhammad Pervez Akhter',
+    role: 'Member',
+    designation: 'Sr. Executive Vice President',
+    bio: 'Senior executive leader overseeing administrative, financial, and strategic growth initiatives.',
+    initials: 'PA'
+  },
+  {
+    name: 'Muhammad Saifullah',
+    role: 'Member',
+    designation: 'Executive Vice President',
+    bio: 'Executive officer managing corporate integration, policy execution, and field operations.',
+    initials: 'MS'
+  },
+  {
+    name: 'Dr. Shahid Afghan',
+    role: 'Member',
+    designation: 'Advisor Emeritus',
+    bio: 'Renowned sugarcane scientist and former institute head providing strategic scientific counsel.',
+    initials: 'SA'
+  },
+  {
+    name: 'Manzoor Hussain Malik',
+    role: 'Member',
+    designation: 'Senior Vice President (Agriculture)',
+    bio: 'Directs sugarcane extension services, grower outreach, and field agronomy trials.',
+    initials: 'MM'
+  },
+  {
+    name: 'Dr. Shahid Hussain',
+    role: 'Member',
+    designation: 'Controller General',
+    bio: 'Manages day-to-day research operations, laboratory management, and technical publication.',
+    initials: 'SH'
+  }
+];
+---
+
+<Layout title="Board of Governors - SSRI">
+  <Header />
+  <PageHero 
+    title="Board of Governors" 
+    subtitle="Distinguished executive leadership and scientific advisors governing the research operations of SSRI."
+    category="About SSRI"
+  />
+
+  <main class="bog-page">
+    <div class="container">
+      <div class="section-intro text-center">
+        <span class="badge">Governance & Leadership</span>
+        <h2>Executive Board of Governors</h2>
+        <p>The Board of Governors guides the strategic research policies, financial investments, and scientific initiatives of Shakarganj Sugar Research Institute.</p>
+      </div>
+
+      <div class="bog-grid">
+        {boardMembers.map(m => (
+          <div class="bog-card">
+            <div class="avatar-box">
+              <span class="avatar-initials">{m.initials}</span>
+              <span class={`role-badge ${m.role === 'Chairman' ? 'role-chairman' : ''}`}>{m.role}</span>
+            </div>
+            <div class="bog-body">
+              <h3>{m.name}</h3>
+              <div class="designation">{m.designation}</div>
+              <p>{m.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .bog-page {
+    padding: 70px 0;
+    background: #f8fafc;
+  }
+  .section-intro {
+    margin-bottom: 50px;
+  }
+  .badge {
+    background: #dcfce7;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .section-intro h2 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    color: #0f172a;
+    margin-bottom: 10px;
+  }
+  .section-intro p {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .bog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .bog-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .bog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  }
+  .avatar-box {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #004d1a 0%, #00802b 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(0, 102, 34, 0.25);
+  }
+  .avatar-initials {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .role-badge {
+    position: absolute;
+    bottom: -8px;
+    background: #475569;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  .role-chairman {
+    background: #d4af37;
+    color: #0b1d12;
+  }
+
+  .bog-body h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .designation {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+  }
+  .bog-body p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 992px) {
+    .bog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .bog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,33 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# temporary scrape files
+temp_scraped/
+
+# 🖼️ NEVER UPLOAD MEDIA / ASSETS TO GIT
+public/images/
+public/*.png
+public/*.jpg
+public/*.jpeg
+public/*.webp
+public/*.gif
+!public/favicon*
+!public/apple-touch-icon*
+

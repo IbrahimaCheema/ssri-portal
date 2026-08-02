@@ -1,0 +1,92 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  category?: string;
+}
+
+const { title, subtitle, category = 'Research & Services' } = Astro.props;
+---
+
+<section class="page_hero_banner">
+  <div class="container">
+    <div class="hero_breadcrumbs">
+      <a href="/">Home</a>
+      <span class="sep">›</span>
+      <span>{category}</span>
+      <span class="sep">›</span>
+      <span class="current">{title}</span>
+    </div>
+    <h1 class="hero_page_title">{title}</h1>
+    {subtitle && <p class="hero_subtitle">{subtitle}</p>}
+  </div>
+</section>
+
+<style>
+  .page_hero_banner {
+    background: linear-gradient(135deg, #041f10 0%, #004d1a 60%, #002b00 100%);
+    color: #ffffff;
+    padding: 32px 0 28px;
+    border-bottom: 3px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+  }
+  .page_hero_banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: radial-gradient(circle, rgba(134, 239, 172, 0.1) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+  }
+  .hero_breadcrumbs {
+    font-size: 12.5px;
+    color: #a0c8a0;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #cbd5e1;
+    transition: color 0.2s;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .sep {
+    color: #475569;
+  }
+  .hero_breadcrumbs .current {
+    color: #86efac;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 30px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+  .hero_subtitle {
+    font-size: 15px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .page_hero_banner {
+      padding: 24px 0 20px;
+    }
+    .hero_page_title {
+      font-size: 24px;
+    }
+    .hero_subtitle {
+      font-size: 13.5px;
+    }
+  }
+</style>

@@ -1,0 +1,235 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Layout title="Contact Us - SSRI">
+  <Header />
+  <PageHero 
+    title="Contact Us" 
+    subtitle="Get in touch with Shakarganj Sugar Research Institute for grower advisory, research inquiries, or variety access."
+    category="Contact"
+  />
+
+  <main class="contact-page">
+    <div class="container grid-layout">
+      <!-- Contact Information Cards -->
+      <div class="info-column">
+        <div class="info-card">
+          <div class="icon-wrap">📍</div>
+          <h3>Institute Address</h3>
+          <p>Shakarganj Sugar Research Institute (SSRI)<br />3 KM Toba Tek Singh Road, Jhang, Punjab, Pakistan</p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-wrap">👤</div>
+          <h3>Controller General</h3>
+          <p><strong>Dr. Shahid Hussain</strong><br />Shakarganj Sugar Research Institute</p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-wrap">✉️</div>
+          <h3>Email Contact</h3>
+          <p><a href="mailto:info@ssri.pk">info@ssri.pk</a></p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-wrap">🏢</div>
+          <h3>Parent Organization</h3>
+          <p><a href="https://shakarganj.pk" target="_blank" rel="noopener noreferrer">Shakarganj Limited ↗</a></p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form-column">
+        <div class="form-card">
+          <h2>Send Us an Inquiry</h2>
+          <p>Fill out the form below to reach our research and agricultural advisory team.</p>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" required placeholder="e.g. Mian Ahmad" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" required placeholder="e.g. ahmad@example.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" placeholder="e.g. +92 300 1234567" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Inquiry Subject *</label>
+              <select id="subject" required>
+                <option value="">Select Category...</option>
+                <option value="varieties">Registered Cane Variety Inquiries</option>
+                <option value="soil">Soil & Water Testing Service</option>
+                <option value="biocontrol">Bio-Control Cards (Trichogramma / Chrysopa)</option>
+                <option value="tissue">Tissue Culture Seed Multiplication</option>
+                <option value="psj">Pakistan Sugar Journal (PSJ) Paper Submission</option>
+                <option value="other">General Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" rows="5" required placeholder="Type your message or research inquiry here..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">Submit Message</button>
+            <div class="toast-msg" id="toastMsg">✓ Thank you! Your message has been sent successfully.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .contact-page {
+    padding: 60px 0;
+    background: #f8fafc;
+  }
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 40px;
+  }
+
+  .info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .info-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  }
+  .icon-wrap {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .info-card h3 {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .info-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+  .info-card a {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  .form-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  .form-card h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+  .form-card p {
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 28px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 102, 34, 0.1);
+  }
+  .btn-submit {
+    align-self: flex-start;
+    padding: 14px 32px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .toast-msg {
+    display: none;
+    background: #dcfce7;
+    color: #166534;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .toast-msg.show {
+    display: block;
+  }
+
+  @media (max-width: 992px) {
+    .grid-layout { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const toast = document.getElementById('toastMsg');
+  if (form && toast) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      toast.classList.add('show');
+      form.reset();
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+    });
+  }
+</script>

@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+
+const varieties = [
+  { name: 'S-2013 SLSG-1283', code: 'SLSG-1283', image: '/images/VAR-SLSG-1283-1024x1024.jpg', status: 'FSCR Registered & NUVYT Trialed' },
+  { name: 'CP-1101', code: 'CP-1101', image: '/images/VAR-CP-1101-1024x1024.jpg', status: 'FSCR Registered Commercial Clone' },
+  { name: 'SLSG-483', code: 'SLSG-483', image: '/images/VAR-SLSG-483-1024x1024.jpg', status: 'FSCR Registered High Tillering' },
+  { name: 'SLSG-109', code: 'SLSG-109', image: '/images/VAR-SLSG-109-1024x1024.jpg', status: 'FSCR Registered Medium Late' },
+  { name: 'CPTJ-349', code: 'CPTJ-349', image: '/images/VAR-CPTJ-349-1024x1024.jpg', status: 'FSCR Registered High Recovery' },
+  { name: 'SLSG-1591', code: 'SLSG-1591', image: '/images/VAR-SLSG-1591-1024x1024.jpg', status: 'FSCR Registered Advanced Breeding' },
+  { name: 'S-2010 CPSG-2525', code: 'CPSG-2525', image: '/images/VAR-CPSG-2525-1024x1024.jpg', status: 'FSCR Registered & NUVYT Trialed' },
+  { name: 'CPSG-29', code: 'CPSG-29', image: '/images/VAR-CPSG-29-1024x1024.jpg', status: 'FSCR Registered Germplasm Line' },
+  { name: 'CPSG-153', code: 'CPSG-153', image: '/images/VAR-CPSG-153-1024x1024.jpg', status: 'FSCR Registered Early Variety' },
+  { name: 'SLSG-128', code: 'SLSG-128', image: '/images/VAR-SLSG-128-1024x1024.jpg', status: 'FSCR Registered Rapid Multiplication' }
+];
+---
+
+<Layout title="Achievements & Registered Varieties - SSRI">
+  <Header />
+  <PageHero 
+    title="Achievements & Registered Sugarcane Varieties" 
+    subtitle="National varietal registration milestones with Federal Seed Certification & Registration Department (FSCR), Islamabad."
+    category="Achievements"
+  />
+
+  <main class="achievements-page">
+    <div class="container">
+      <section class="overview-box">
+        <span class="badge">FSCR Islamabad Registration</span>
+        <h2>Federal Varietal Milestones</h2>
+        <p class="lead-desc">
+          Eight (08) new cane varieties have been registered with the <strong>Federal Seed Certification and Registration (FSCR) Department, Islamabad</strong> as an initial step towards formal variety approval for commercial cultivation.
+        </p>
+        <p>
+          Furthermore, complete data for two primary candidates—<strong>S-2010 CPSG-2525</strong> and <strong>S-2013 SLSG-1283</strong>—has been completed under the <strong>National Uniform Varietal Yield Trials (NUVYT)</strong>. Both varieties have successfully performed the <strong>Distinctness, Uniformity, and Stability (DUS)</strong> test for two consecutive years.
+        </p>
+      </section>
+
+      <section class="gallery-section">
+        <div class="section-title">
+          <h2>Proprietary Sugarcane Variety Catalog</h2>
+          <p>High-yielding, high-sugar recovery proprietary varieties bred and field-tested at SSRI.</p>
+        </div>
+
+        <div class="variety-grid">
+          {varieties.map(v => (
+            <div class="variety-card">
+              <div class="img-box">
+                <img src={v.image} alt={v.name} onerror="this.onerror=null; this.src='/images/VAR-SLSG-1283-1024x1024.jpg'" />
+                <span class="code-tag">{v.code}</span>
+              </div>
+              <div class="card-content">
+                <h3>{v.name}</h3>
+                <div class="status-tag">{v.status}</div>
+                <p>Proprietary SSRI clone tested for disease resistance, cane weight, and high sucrose extraction capability.</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .achievements-page {
+    padding: 60px 0;
+    background: #f8fafc;
+  }
+  .overview-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 50px;
+  }
+  .badge {
+    background: #dcfce7;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .overview-box h2 {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    color: #0f172a;
+    margin-bottom: 14px;
+  }
+  .lead-desc {
+    font-size: 17.5px;
+    color: #1e293b;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .overview-box p {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+  }
+  .section-title h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .section-title p {
+    font-size: 15.5px;
+    color: #64748b;
+  }
+
+  .variety-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .variety-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .variety-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  }
+  .img-box {
+    position: relative;
+    height: 250px;
+  }
+  .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .code-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #004d1a;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+  .card-content {
+    padding: 24px;
+  }
+  .card-content h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .status-tag {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: #f0fdf4;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .card-content p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 992px) {
+    .variety-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .variety-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

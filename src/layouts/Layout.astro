@@ -1,0 +1,65 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Corporate Portal - Rebuilt with Astro & Cloudflare R2" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--font-heading: 'Outfit', sans-serif;
+		--font-body: 'Inter', sans-serif;
+		--primary-color: #006622;
+		--primary-dark: #004d1a;
+		--primary-light: #00802b;
+		--accent-gold: #d4af37;
+		--bg-dark: #0b1d12;
+		--text-main: #2d3748;
+		--text-light: #718096;
+		--bg-light: #f7fafc;
+	}
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	html, body {
+		font-family: var(--font-body);
+		background-color: #ffffff;
+		color: var(--text-main);
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+	}
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.container {
+		width: 100%;
+		max-width: 1240px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+</style>

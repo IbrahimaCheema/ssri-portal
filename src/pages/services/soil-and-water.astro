@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+
+<Layout title="Soil & Water Advisory Service - SSRI">
+  <Header />
+  <PageHero 
+    title="Soil And Water Advisory Service" 
+    subtitle="Free soil fertility and irrigation water testing services provided to over 6,000 growers since 1990."
+    category="Services"
+  />
+
+  <main class="service-detail-page">
+    <div class="container grid-layout">
+      <article class="main-content">
+        <div class="content-card">
+          <span class="badge">Est. 1990 • Free Grower Service</span>
+          <h2>Analytical Laboratory & Advisory Overview</h2>
+          <p class="lead-p">
+            The <strong>Soil and Water Testing Laboratory</strong> of SSRI was established in 1990 for the balanced application of fertilizers and judicious utilization of irrigation water.
+          </p>
+          <p>
+            These analytical services are provided <strong>completely free of cost</strong> to the 6,000+ registered sugarcane growers of Shakarganj. The advisory facility helps farmers accurately assess and correct the fertility levels of their soil and evaluate the chemical fitness status of tubewell and canal irrigation water.
+          </p>
+
+          <div class="benefit-box">
+            <h3>Key Benefits for Farmers</h3>
+            <ul>
+              <li><strong>Balanced Fertigation:</strong> Precise macro and micro-nutrient recommendations tailored to specific farm soil profiles.</li>
+              <li><strong>Water Fitness Evaluation:</strong> Testing Electrical Conductivity (EC), Sodium Adsorption Ratio (SAR), and Residual Sodium Carbonate (RSC) to prevent soil salinity.</li>
+              <li><strong>Cost Reduction:</strong> Eliminates excessive, unnecessary chemical fertilizer usage, directly increasing net farm profitability.</li>
+              <li><strong>Yield Enhancement:</strong> Improves crop nutrient absorption efficiency and root health.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="widget">
+          <h3>Services Menu</h3>
+          <ul>
+            <li><a href="/services/soil-and-water" class="active">Soil & Water Advisory</a></li>
+            <li><a href="/services/biological-control">Bio-Control Laboratories</a></li>
+            <li><a href="/services/tricho-card">Trichogramma Rearing</a></li>
+            <li><a href="/services/chrysopa-sheets">Chrysopa Lacewing</a></li>
+            <li><a href="/services/tissue-culture">Tissue Culture Lab</a></li>
+            <li><a href="/services/other-services">Agronomy & SOF Fertilizer</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .service-detail-page {
+    padding: 60px 0;
+    background: #f8fafc;
+  }
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 40px;
+  }
+  .content-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+  }
+  .badge {
+    background: #dcfce7;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    color: #0f172a;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .lead-p {
+    font-size: 17.5px;
+    color: #1e293b;
+  }
+
+  .benefit-box {
+    background: #f0fdf4;
+    padding: 28px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    margin-top: 24px;
+  }
+  .benefit-box h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--primary-dark);
+    margin-bottom: 14px;
+  }
+  .benefit-box ul {
+    padding-left: 20px;
+  }
+  .benefit-box li {
+    font-size: 15px;
+    color: #334155;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .widget {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+  }
+  .widget h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: #0f172a;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+  }
+  .widget ul { list-style: none; }
+  .widget li { margin-bottom: 8px; }
+  .widget a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #475569;
+  }
+  .widget a.active, .widget a:hover {
+    background: #f0fdf4;
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+
+  @media (max-width: 992px) {
+    .grid-layout { grid-template-columns: 1fr; }
+  }
+</style>

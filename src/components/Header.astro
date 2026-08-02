@@ -1,0 +1,312 @@
+---
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { 
+    name: 'About SSRI', 
+    href: '/about',
+    dropdown: [
+      { name: 'Overview & Mission', href: '/about' },
+      { name: 'Board of Governors', href: '/bog' }
+    ]
+  },
+  { name: 'Achievements', href: '/achievements' },
+  { 
+    name: 'Services', 
+    href: '/services',
+    dropdown: [
+      { name: 'All Services Overview', href: '/services' },
+      { name: 'Soil & Water Advisory', href: '/services/soil-and-water' },
+      { name: 'Biological Control Labs', href: '/services/biological-control' },
+      { name: 'Trichogramma Laboratory', href: '/services/tricho-card' },
+      { name: 'Chrysopa Laboratory', href: '/services/chrysopa-sheets' },
+      { name: 'Tissue Culture Lab', href: '/services/tissue-culture' },
+      { name: 'Agronomy, SOF & Library', href: '/services/other-services' }
+    ]
+  },
+  { name: 'PSJ', href: '/psj' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'Contact Us', href: '/contact' }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <!-- Top Contact Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span class="info-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          3 KM Toba Tek Singh Road, Jhang, Punjab, Pakistan
+        </span>
+        <span class="info-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@ssri.pk
+        </span>
+      </div>
+      <div class="top-right">
+        <span class="est-tag">Est. July 13, 1983</span>
+        <a href="https://shakarganj.pk" target="_blank" rel="noopener noreferrer" class="parent-link">Shakarganj Limited ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <div class="main-nav-wrapper">
+    <div class="container main-nav-container">
+      <a href="/" class="brand-logo">
+        <img src="/images/sr-logo.png" alt="Shakarganj Sugar Research Institute" class="logo-img" onerror="this.onerror=null; this.src='/images/sr-logo.png'" />
+        <div class="brand-text">
+          <span class="brand-title">SSRI</span>
+          <span class="brand-sub">Shakarganj Sugar Research Institute</span>
+        </div>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" id="navMenu">
+        {navLinks.map((item) => (
+          <div class={`nav-item ${item.dropdown ? 'has-dropdown' : ''}`}>
+            <a 
+              href={item.href} 
+              class={`nav-link ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'active' : ''}`}
+            >
+              {item.name}
+              {item.dropdown && (
+                <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+              )}
+            </a>
+            {item.dropdown && (
+              <div class="dropdown-menu">
+                {item.dropdown.map((sub) => (
+                  <a href={sub.href} class={`dropdown-item ${currentPath === sub.href ? 'active' : ''}`}>
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  .top-bar {
+    background: #091f14;
+    color: #cbd5e1;
+    font-size: 13px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .top-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .est-tag {
+    background: rgba(0, 128, 43, 0.3);
+    color: #86efac;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .parent-link {
+    color: #facc15;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .parent-link:hover {
+    opacity: 0.85;
+  }
+
+  .main-nav-wrapper {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .main-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+  }
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .brand-sub {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-item {
+    position: relative;
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 14px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #334155;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+    background: rgba(0, 102, 34, 0.06);
+  }
+  .dropdown-chevron {
+    transition: transform 0.2s;
+  }
+  .has-dropdown:hover .dropdown-chevron {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 230px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    border: 1px solid #f1f5f9;
+  }
+  .has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .dropdown-item {
+    display: block;
+    padding: 9px 18px;
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+  }
+  .dropdown-item:hover, .dropdown-item.active {
+    background: #f0fdf4;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #334155;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  @media (max-width: 992px) {
+    .top-bar-content {
+      flex-direction: column;
+      gap: 6px;
+      text-align: center;
+    }
+    .mobile-toggle {
+      display: block;
+    }
+    .nav-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      display: none;
+      border-top: 1px solid #e2e8f0;
+    }
+    .nav-menu.is-open {
+      display: flex;
+    }
+    .dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      padding-left: 14px;
+      border: none;
+      background: #f8fafc;
+      margin-top: 4px;
+    }
+  }
+</style>
+
+<script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+  if (mobileBtn && navMenu) {
+    mobileBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('is-open');
+    });
+  }
+</script>

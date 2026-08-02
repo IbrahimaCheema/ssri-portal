@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+
+<Layout title="Agronomy, Pathology, SOF & Library - SSRI">
+  <Header />
+  <PageHero 
+    title="Agronomy, Pathology, SOF & Research Library" 
+    subtitle="Field agronomy trials, pathology disease screening, organic soil enhancement, and research documentation."
+    category="Services"
+  />
+
+  <main class="service-detail-page">
+    <div class="container grid-layout">
+      <article class="main-content">
+        <!-- Germplasm -->
+        <section class="content-card">
+          <span class="badge">National Germplasm Exchange</span>
+          <h2>Collection & Exchange of Germplasm</h2>
+          <p>
+            As a vital part of the SSRI variety development program, germplasm exchange is actively maintained with top agricultural research institutes across Pakistan, including:
+          </p>
+          <ul class="styled-list">
+            <li>Sugarcane Research Institute (SRI), Faisalabad</li>
+            <li>Sugar Crops Research Institute (SCRI), Mardan</li>
+            <li>Dewan Farooq Sugarcane Research Institute (DFSRI), Thatta</li>
+            <li>National Agriculture Research Council (NARC Sub-station), Thatta</li>
+            <li>Nuclear Institute for Agriculture (NIA), Tandojam</li>
+            <li>Qaid-e-Awam Research Institute, Larkana</li>
+          </ul>
+          <p>These research institutes coordinate closely under the National Uniform Varietal Yield Trials (NUVYT) managed by NARC Islamabad.</p>
+        </section>
+
+        <!-- Agronomy & Pathology -->
+        <section class="content-card">
+          <span class="badge">Crop Protection & Field Science</span>
+          <h2>Sugarcane Agronomy & Pathology</h2>
+          <div class="sub-block">
+            <h3>Sugarcane Agronomy</h3>
+            <p>
+              Provides direct technical guidance on production technology, biometric varietal traits, judicious fertilizer application, and irrigation water management. Agronomic trials cover seed rate studies, row spacing, fertilizer application coefficients, and post-harvest loss minimization.
+            </p>
+          </div>
+          <div class="sub-block margin-top">
+            <h3>Sugarcane Pathology</h3>
+            <p>
+              Systematic screening of sugarcane clones against major fungal and viral diseases including <strong>Red Rot, Rust, Pokkah Boeng, and Smut</strong> during March to May under natural and artificial inoculation conditions. Artificial inoculation of axenic cultures for Red Rot is conducted during the peak growth phase in July.
+            </p>
+          </div>
+        </section>
+
+        <!-- SOF Organic Fertilizer -->
+        <section class="content-card bg-sof">
+          <span class="badge badge-gold">100% Organic Soil Nutrition</span>
+          <h2>Shakarganj Organic Fertilizer (SOF)</h2>
+          <p>
+            Research at SSRI identified that low sugarcane production in regional soils is directly linked to organic matter depletion (dropping below 0.40% due to high summer temperatures and lack of organic restitution).
+          </p>
+          <p>
+            <strong>Shakarganj Organic Fertilizer (SOF)</strong> is a 100% organic, slow-release compost engineered for root building, soil structure restoration, and enhanced chemical fertilizer absorption.
+          </p>
+          <div class="stat-highlight">
+            <span class="stat-val">+15% to +20%</span>
+            <span class="stat-lbl">Increase in crop yield per acre recorded by farmers utilizing SOF</span>
+          </div>
+        </section>
+
+        <!-- Library -->
+        <section class="content-card">
+          <span class="badge">Est. 1990 • Research Repository</span>
+          <h2>SSRI Scientific Library</h2>
+          <p>
+            Established in 1990, the SSRI research library is computerized using Dewey Decimal Classification and provides online catalog access to researchers and departmental officers.
+          </p>
+          <p>
+            The library repository houses over <strong>6,205 volumes</strong> comprising scientific books, research journals, proceedings, manuals, and audio-visual agricultural references.
+          </p>
+        </section>
+      </article>
+
+      <aside class="sidebar">
+        <div class="widget">
+          <h3>Services Menu</h3>
+          <ul>
+            <li><a href="/services/soil-and-water">Soil & Water Advisory</a></li>
+            <li><a href="/services/biological-control">Bio-Control Laboratories</a></li>
+            <li><a href="/services/tricho-card">Trichogramma Rearing</a></li>
+            <li><a href="/services/chrysopa-sheets">Chrysopa Lacewing</a></li>
+            <li><a href="/services/tissue-culture">Tissue Culture Lab</a></li>
+            <li><a href="/services/other-services" class="active">Agronomy & SOF Fertilizer</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .service-detail-page { padding: 60px 0; background: #f8fafc; }
+  .grid-layout { display: grid; grid-template-columns: 2.5fr 1fr; gap: 40px; }
+  .content-card { background: #ffffff; padding: 36px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; }
+  .badge { background: #dcfce7; color: var(--primary-color); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px; display: inline-block; margin-bottom: 14px; }
+  .badge-gold { background: #fef9c3; color: #854d0e; }
+  h2 { font-family: var(--font-heading); font-size: 26px; color: #0f172a; margin-bottom: 16px; }
+  h3 { font-family: var(--font-heading); font-size: 19px; color: var(--primary-dark); margin-bottom: 8px; }
+  p { font-size: 15.5px; color: #475569; line-height: 1.7; margin-bottom: 14px; }
+  .styled-list { padding-left: 20px; margin-bottom: 16px; }
+  .styled-list li { font-size: 14.5px; color: #334155; margin-bottom: 6px; }
+  .margin-top { margin-top: 20px; }
+  .bg-sof { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-color: #86efac; }
+  .stat-highlight { background: #ffffff; border-radius: 8px; padding: 20px; text-align: center; margin-top: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+  .stat-val { font-family: var(--font-heading); font-size: 32px; font-weight: 800; color: var(--primary-color); display: block; }
+  .stat-lbl { font-size: 13.5px; color: #475569; font-weight: 600; }
+
+  .widget { background: #ffffff; padding: 24px; border-radius: 10px; border: 1px solid #e2e8f0; }
+  .widget h3 { font-family: var(--font-heading); font-size: 18px; color: #0f172a; margin-bottom: 16px; border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; }
+  .widget ul { list-style: none; }
+  .widget li { margin-bottom: 8px; }
+  .widget a { display: block; padding: 8px 12px; border-radius: 6px; font-size: 14px; color: #475569; }
+  .widget a.active, .widget a:hover { background: #f0fdf4; color: var(--primary-color); font-weight: 700; }
+  @media (max-width: 992px) { .grid-layout { grid-template-columns: 1fr; } }
+</style>

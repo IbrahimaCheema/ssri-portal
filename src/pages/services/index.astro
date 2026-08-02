@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const services = [
+  {
+    title: 'Soil & Water Advisory Service',
+    established: 'Est. 1990',
+    desc: 'Provides free soil and irrigation water testing to 6,000+ Shakarganj growers for balanced fertigation and maximum crop efficiency.',
+    icon: '🧪',
+    href: '/services/soil-and-water'
+  },
+  {
+    title: 'Biological Control Laboratories',
+    established: 'Est. 1995',
+    desc: 'Pioneering mass rearing of beneficial bio-agents (Trichogramma & Chrysoperla) for non-chemical control of sugarcane borer and Pyrilla pests.',
+    icon: '🪲',
+    href: '/services/biological-control'
+  },
+  {
+    title: 'Trichogramma Laboratory',
+    established: 'Bio-Control Unit',
+    desc: 'Egg parasite mass rearing on cards for effective borer complex eradication in sugarcane fields.',
+    icon: '🏷️',
+    href: '/services/tricho-card'
+  },
+  {
+    title: 'Chrysopa Laboratory',
+    established: 'Bio-Control Unit',
+    desc: 'Green lacewing (*Chrysoperla carnea*) rearing for controlling Pyrilla nymph and egg infestation.',
+    icon: '🦗',
+    href: '/services/chrysopa-sheets'
+  },
+  {
+    title: 'Tissue Culture Laboratory',
+    established: 'Est. 2001',
+    desc: 'Micropropagation of disease-free Meristem seed clones, soma-clonal sugarcane improvement, Stevia, and ornamental tissue culture.',
+    icon: '🧫',
+    href: '/services/tissue-culture'
+  },
+  {
+    title: 'Sugarcane Agronomy & Pathology',
+    established: 'Field Science',
+    desc: 'Conducting varietal yield trials, seed rate studies, irrigation coefficients, and disease screening against Red Rot, Rust, and Smut.',
+    icon: '🔬',
+    href: '/services/other-services'
+  },
+  {
+    title: 'Shakarganj Organic Fertilizer (SOF)',
+    desc: '100% organic, slow-release compost increasing soil organic matter from 0.40% and boosting crop yield per acre by 15-20%.',
+    icon: '🌱',
+    href: '/services/other-services'
+  },
+  {
+    title: 'Research Library & Germplasm',
+    established: 'Est. 1990',
+    desc: 'Over 6,205 cataloged research volumes, online database access, and germplasm exchange with national institutions (NARC, SRI, SCRI).',
+    icon: '📚',
+    href: '/services/other-services'
+  }
+];
+---
+
+<Layout title="Research Services - SSRI">
+  <Header />
+  <PageHero 
+    title="Research & Advisory Services" 
+    subtitle="Comprehensive agricultural scientific services serving growers, millers, and the scientific research community."
+    category="Services"
+  />
+
+  <main class="services-hub-page">
+    <div class="container">
+      <div class="hub-grid">
+        {services.map(s => (
+          <div class="hub-card">
+            <div class="card-header">
+              <span class="card-icon">{s.icon}</span>
+              {s.established && <span class="est-tag">{s.established}</span>}
+            </div>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+            <a href={s.href} class="btn-read-more">Learn More & Specifications →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .services-hub-page {
+    padding: 70px 0;
+    background: #f8fafc;
+  }
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .hub-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hub-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    border-color: var(--primary-color);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .card-icon {
+    font-size: 36px;
+  }
+  .est-tag {
+    background: #f0fdf4;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+  .hub-card h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 10px;
+  }
+  .hub-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .btn-read-more {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  @media (max-width: 992px) {
+    .hub-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .hub-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

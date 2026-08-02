@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+
+<Layout title="Trichogramma chilonis Laboratory - SSRI">
+  <Header />
+  <PageHero 
+    title="Trichogramma chilonis Laboratory" 
+    subtitle="Mass production of egg parasites for non-chemical prevention and control of the sugarcane borer complex."
+    category="Services"
+  />
+
+  <main class="service-detail-page">
+    <div class="container grid-layout">
+      <article class="main-content">
+        <div class="content-card">
+          <span class="badge">Biocontrol Unit • Borer Eradication</span>
+          <h2>Trichogramma chilonis Rearing System</h2>
+          <p class="lead-p">
+            <em>Trichogramma chilonis</em> is a minute hymenopterous egg parasitoid utilized as a powerful bio-agent to control the sugarcane borer complex (top borer, stem borer, and root borer).
+          </p>
+          <p>
+            The female <em>Trichogramma</em> wasp lays its eggs inside the eggs of sugarcane borers, preventing borer larvae from hatching and damaging the cane stalks.
+          </p>
+
+          <div class="feature-box">
+            <h3>Field Benefits & Preventive Effect</h3>
+            <p>
+              Besides direct pest reduction during the season of release, field releases of <em>Trichogramma</em> cards establish a self-perpetuating population in sugarcane fields, providing preventive protection across successive crop seasons.
+            </p>
+            <ul>
+              <li><strong>Zero Chemical Residues:</strong> Safe for field workers, water sources, and beneficial soil organisms.</li>
+              <li><strong>Broad Field Coverage:</strong> Distributed via convenient Tricho cards attached directly to sugarcane leaves.</li>
+              <li><strong>Cost Efficient:</strong> Significantly lower expense compared to multiple sprays of toxic synthetic insecticides.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="widget">
+          <h3>Services Menu</h3>
+          <ul>
+            <li><a href="/services/soil-and-water">Soil & Water Advisory</a></li>
+            <li><a href="/services/biological-control">Bio-Control Laboratories</a></li>
+            <li><a href="/services/tricho-card" class="active">Trichogramma Rearing</a></li>
+            <li><a href="/services/chrysopa-sheets">Chrysopa Lacewing</a></li>
+            <li><a href="/services/tissue-culture">Tissue Culture Lab</a></li>
+            <li><a href="/services/other-services">Agronomy & SOF Fertilizer</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .service-detail-page { padding: 60px 0; background: #f8fafc; }
+  .grid-layout { display: grid; grid-template-columns: 2.5fr 1fr; gap: 40px; }
+  .content-card { background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+  .badge { background: #dcfce7; color: var(--primary-color); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px; display: inline-block; margin-bottom: 14px; }
+  h2 { font-family: var(--font-heading); font-size: 28px; color: #0f172a; margin-bottom: 16px; }
+  p { font-size: 16px; color: #475569; line-height: 1.7; margin-bottom: 16px; }
+  .lead-p { font-size: 17.5px; color: #1e293b; }
+  .feature-box { background: #f0fdf4; padding: 24px; border-radius: 10px; border-left: 4px solid var(--primary-color); margin-top: 20px; }
+  .feature-box h3 { font-family: var(--font-heading); font-size: 20px; color: var(--primary-dark); margin-bottom: 12px; }
+  .feature-box ul { padding-left: 20px; margin-top: 10px; }
+  .feature-box li { font-size: 14.5px; color: #334155; margin-bottom: 8px; }
+  .widget { background: #ffffff; padding: 24px; border-radius: 10px; border: 1px solid #e2e8f0; }
+  .widget h3 { font-family: var(--font-heading); font-size: 18px; color: #0f172a; margin-bottom: 16px; border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; }
+  .widget ul { list-style: none; }
+  .widget li { margin-bottom: 8px; }
+  .widget a { display: block; padding: 8px 12px; border-radius: 6px; font-size: 14px; color: #475569; }
+  .widget a.active, .widget a:hover { background: #f0fdf4; color: var(--primary-color); font-weight: 700; }
+  @media (max-width: 992px) { .grid-layout { grid-template-columns: 1fr; } }
+</style>
